@@ -119,7 +119,7 @@ class AssetsViewController: UICollectionViewController, UICollectionViewDelegate
                 if reuseCount == cell.reuseCount {
                     cell.imageView.image = result
                 }
-        }
+            }
         
         return cell
     }

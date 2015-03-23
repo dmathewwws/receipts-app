@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0DDC811ABFC3B000F13028 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0DDC801ABFC3B000F13028 /* MobileCoreServices.framework */; };
 		AF2ADF1B1AACBFE600CABC93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2ADF1A1AACBFE600CABC93 /* AppDelegate.swift */; };
 		AF2ADF1E1AACBFE600CABC93 /* Receipts__.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF2ADF1C1AACBFE600CABC93 /* Receipts__.xcdatamodeld */; };
 		AF2ADF231AACBFE600CABC93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2ADF211AACBFE600CABC93 /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AF0DDC801ABFC3B000F13028 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		AF2ADF151AACBFE600CABC93 /* Receipts++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Receipts++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2ADF191AACBFE600CABC93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF2ADF1A1AACBFE600CABC93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF0DDC811ABFC3B000F13028 /* MobileCoreServices.framework in Frameworks */,
 				AFC1CA2C1ABA2FFF004486C0 /* CoreLocation.framework in Frameworks */,
 				AFC1CA2A1ABA2FFB004486C0 /* Photos.framework in Frameworks */,
 			);
@@ -127,6 +130,7 @@
 		AF2ADF0C1AACBFE600CABC93 = {
 			isa = PBXGroup;
 			children = (
+				AF0DDC801ABFC3B000F13028 /* MobileCoreServices.framework */,
 				AFC1CA2B1ABA2FFF004486C0 /* CoreLocation.framework */,
 				AFC1CA291ABA2FFB004486C0 /* Photos.framework */,
 				AF2ADF171AACBFE600CABC93 /* Receipts++ */,

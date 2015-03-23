@@ -37,7 +37,7 @@ class AddLabelViewController: UIViewController {
             self.scrollView.contentSize = result.size
         }
         
-//        println("location for firstAsset is \(firstImage.location)");
+        //        println("location for firstAsset is \(firstImage.location)");
         
         FoursquareManager.sharedInstance.getVenuesFromLocation(firstImage.location) { data in
             if let getsResponses = data["response"] as [NSObject:AnyObject]?{

@@ -15,9 +15,20 @@ class AssetCell: UICollectionViewCell {
     
     var reuseCount: Int = 0
     
+    var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark)) as UIVisualEffectView
+    
     override var selected: Bool {
         didSet {
             aCheckMark.hidden = !selected
+            if (!aCheckMark.hidden){
+                visualEffectView.frame = imageView.bounds
+                visualEffectView.alpha = 0.6
+                imageView.addSubview(visualEffectView)
+                
+            }else{
+                visualEffectView.frame = CGRectZero
+            }
+            
         }
     }
     

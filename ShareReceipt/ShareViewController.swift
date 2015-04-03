@@ -15,8 +15,8 @@ import CoreLocation
 
 class ShareViewController: SLComposeServiceViewController {
 
-    //var managedObjectContext = ReceiptsCoreDataManager.sharedInstance.managedObjectContext
-        
+    var managedObjectContext = ReceiptsCoreDataManager.sharedInstance.managedObjectContext
+    
     override func viewDidLoad() {
         // 1
         let items = extensionContext?.inputItems
@@ -45,27 +45,6 @@ class ShareViewController: SLComposeServiceViewController {
                         // 6
                         let url = item as NSURL
                         if let imageData = NSData(contentsOfURL: url) {
-                            
-//                            self.assetLibrary.assetForURL(url, resultBlock: {
-//                                (asset: ALAsset!) in
-//                                if asset != nil {
-//                                    var assetRep: ALAssetRepresentation = asset.defaultRepresentation()
-//                                    var iref = assetRep.fullResolutionImage().takeUnretainedValue()
-//                                    var image =  UIImage(CGImage: iref)
-//                                }
-//                                },
-//                                failureBlock: {
-//                                    (error: NSError!) in
-//                                    
-//                                    NSLog("Error!", error)
-//                                }
-//                            )
-                            
-                            var urlArray:[NSURL]  = [NSURL]()
-                            urlArray.append(url)
-
-                            
-                            let assetFetchResults = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: nil)
                             
                             //let firstImage = self.PHAssetForFileURL(url)
                             
@@ -123,7 +102,7 @@ class ShareViewController: SLComposeServiceViewController {
                 }
             }
         }
-        
+    
         return nil
     }
     

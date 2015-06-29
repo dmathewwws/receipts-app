@@ -24,7 +24,7 @@ class ShareViewController: SLComposeServiceViewController {
         
         // 2
         if items != nil && items!.isEmpty == false {
-            let item = items![0] as NSExtensionItem
+            let item = items![0] as! NSExtensionItem
             if let attachments = item.attachments {
                 if !attachments.isEmpty {
                     // 3
@@ -43,12 +43,12 @@ class ShareViewController: SLComposeServiceViewController {
                 { item, error in
                     if error == nil {
                         // 6
-                        let url = item as NSURL
+                        let url = item as! NSURL
                         if let imageData = NSData(contentsOfURL: url) {
                             
                             //let firstImage = self.PHAssetForFileURL(url)
                             
-                            println("url for image is \(url)");
+                            print("url for image is \(url)");
                             //println("localIdentifier for firstAsset is \(firstImage!.localIdentifier)");
                             
                         }
@@ -109,7 +109,7 @@ class ShareViewController: SLComposeServiceViewController {
     override func isContentValid() -> Bool {
         
         if let currentMessage = contentText{
-            println("currentMessage in isContentValid \(currentMessage)")
+            print("currentMessage in isContentValid \(currentMessage)")
         }
 
         
@@ -155,7 +155,7 @@ class ShareViewController: SLComposeServiceViewController {
         extensionContext?.inputItems
         
         if let currentMessage = contentText{
-            println("currentMessage in didSelectPost \(currentMessage)")
+            print("currentMessage in didSelectPost \(currentMessage)")
         }
         
         //loadDataHome()

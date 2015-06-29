@@ -35,13 +35,13 @@ class FoursquareManager: NSObject {
         let task = session.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
             if(error != nil) {
                 // If there is an error in the web request, print it to the console
-                println(error.localizedDescription)
+                print(error.localizedDescription)
             }
             var err: NSError?
-            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSDictionary!
+            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! [NSObject:AnyObject]
             if(err != nil) {
                 // If there is an error parsing JSON, print it to the console
-                println("JSON Error \(err!.localizedDescription)")
+                print("JSON Error \(err!.localizedDescription)")
             }
             completionClosure(dict:jsonResult)
             

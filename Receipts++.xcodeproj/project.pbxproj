@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF02799B1ACFBE7F00D2BBB5 /* LabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF02799A1ACFBE7F00D2BBB5 /* LabelView.xib */; };
+		AF02799C1ACFBE7F00D2BBB5 /* LabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF02799A1ACFBE7F00D2BBB5 /* LabelView.xib */; };
+		AF02799E1ACFC89500D2BBB5 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF02799D1ACFC89500D2BBB5 /* LabelView.swift */; };
+		AF02799F1ACFC89500D2BBB5 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF02799D1ACFC89500D2BBB5 /* LabelView.swift */; };
 		AF0DDC811ABFC3B000F13028 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0DDC801ABFC3B000F13028 /* MobileCoreServices.framework */; };
 		AF2ADF1B1AACBFE600CABC93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2ADF1A1AACBFE600CABC93 /* AppDelegate.swift */; };
-		AF2ADF1E1AACBFE600CABC93 /* Receipts__.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF2ADF1C1AACBFE600CABC93 /* Receipts__.xcdatamodeld */; };
 		AF2ADF231AACBFE600CABC93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2ADF211AACBFE600CABC93 /* Main.storyboard */; };
 		AF2ADF251AACBFE600CABC93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF2ADF241AACBFE600CABC93 /* Images.xcassets */; };
 		AF2ADF281AACBFE600CABC93 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2ADF261AACBFE600CABC93 /* LaunchScreen.xib */; };
 		AF2ADF341AACBFE700CABC93 /* Receipts__Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2ADF331AACBFE700CABC93 /* Receipts__Tests.swift */; };
+		AF6F644D1AD5A5A300182FC9 /* Receipts__.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF6F644B1AD5A5A300182FC9 /* Receipts__.xcdatamodeld */; };
+		AF6F644F1AD5A6C600182FC9 /* Receipts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F644E1AD5A6C600182FC9 /* Receipts.swift */; };
+		AF6F64501AD5A6C600182FC9 /* Receipts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F644E1AD5A6C600182FC9 /* Receipts.swift */; };
 		AF8D82501AC1E70B0074D352 /* PhotoUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8D824F1AC1E70B0074D352 /* PhotoUtilities.swift */; };
 		AF8D82511AC1E70B0074D352 /* PhotoUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8D824F1AC1E70B0074D352 /* PhotoUtilities.swift */; };
 		AFA463D91ABE77B50032F65F /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA463D81ABE77B50032F65F /* Labels.swift */; };
 		AFA463DA1ABE77B50032F65F /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA463D81ABE77B50032F65F /* Labels.swift */; };
-		AFA463DC1ABE77CE0032F65F /* Receipts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA463DB1ABE77CE0032F65F /* Receipts.swift */; };
-		AFA463DD1ABE77CE0032F65F /* Receipts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA463DB1ABE77CE0032F65F /* Receipts.swift */; };
 		AFC1CA201ABA2A93004486C0 /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC1CA1F1ABA2A93004486C0 /* AssetsViewController.swift */; };
 		AFC1CA221ABA2ACA004486C0 /* AssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC1CA211ABA2ACA004486C0 /* AssetCell.swift */; };
 		AFC1CA241ABA2B7C004486C0 /* CheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC1CA231ABA2B7C004486C0 /* CheckMark.swift */; };
@@ -31,7 +35,6 @@
 		AFC90F621ABA994800187F06 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC90F611ABA994800187F06 /* MainInterface.storyboard */; };
 		AFC90F651ABA994800187F06 /* ShareReceipt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AFC90F5B1ABA994800187F06 /* ShareReceipt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AFC90F6C1ABBB4F600187F06 /* ReceiptsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC90F6B1ABBB4F600187F06 /* ReceiptsTableViewController.swift */; };
-		AFD3998C1ABE1FED009EAB8D /* Receipts__.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF2ADF1C1AACBFE600CABC93 /* Receipts__.xcdatamodeld */; };
 		AFD3998D1ABE2124009EAB8D /* FoursquareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC1CA261ABA2C6B004486C0 /* FoursquareManager.swift */; };
 		AFD3998F1ABE2222009EAB8D /* ReceiptsCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD3998E1ABE2222009EAB8D /* ReceiptsCoreDataManager.swift */; };
 		AFD399901ABE2222009EAB8D /* ReceiptsCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD3998E1ABE2222009EAB8D /* ReceiptsCoreDataManager.swift */; };
@@ -72,20 +75,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AF02799A1ACFBE7F00D2BBB5 /* LabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelView.xib; sourceTree = "<group>"; };
+		AF02799D1ACFC89500D2BBB5 /* LabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		AF0DDC801ABFC3B000F13028 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		AF2ADF151AACBFE600CABC93 /* Receipts++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Receipts++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2ADF191AACBFE600CABC93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF2ADF1A1AACBFE600CABC93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF2ADF1D1AACBFE600CABC93 /* Receipts__.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Receipts__.xcdatamodel; sourceTree = "<group>"; };
 		AF2ADF221AACBFE600CABC93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF2ADF241AACBFE600CABC93 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AF2ADF271AACBFE600CABC93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AF2ADF2D1AACBFE700CABC93 /* Receipts++Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Receipts++Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2ADF321AACBFE700CABC93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF2ADF331AACBFE700CABC93 /* Receipts__Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipts__Tests.swift; sourceTree = "<group>"; };
+		AF6F644C1AD5A5A300182FC9 /* Receipts__.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Receipts__.xcdatamodel; sourceTree = "<group>"; };
+		AF6F644E1AD5A6C600182FC9 /* Receipts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receipts.swift; sourceTree = "<group>"; };
 		AF8D824F1AC1E70B0074D352 /* PhotoUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoUtilities.swift; sourceTree = "<group>"; };
 		AFA463D81ABE77B50032F65F /* Labels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
-		AFA463DB1ABE77CE0032F65F /* Receipts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receipts.swift; sourceTree = "<group>"; };
 		AFC1CA1F1ABA2A93004486C0 /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		AFC1CA211ABA2ACA004486C0 /* AssetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCell.swift; sourceTree = "<group>"; };
 		AFC1CA231ABA2B7C004486C0 /* CheckMark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckMark.swift; sourceTree = "<group>"; };
@@ -162,6 +167,7 @@
 		AF2ADF171AACBFE600CABC93 /* Receipts++ */ = {
 			isa = PBXGroup;
 			children = (
+				AF6F644B1AD5A5A300182FC9 /* Receipts__.xcdatamodeld */,
 				AFC90F561ABA93C700187F06 /* Receipts++.entitlements */,
 				AF2ADF1A1AACBFE600CABC93 /* AppDelegate.swift */,
 				AF8D824F1AC1E70B0074D352 /* PhotoUtilities.swift */,
@@ -171,6 +177,8 @@
 				AFC1CA251ABA2C6B004486C0 /* AddLabelViewController.swift */,
 				AFC1CA261ABA2C6B004486C0 /* FoursquareManager.swift */,
 				AF2ADF211AACBFE600CABC93 /* Main.storyboard */,
+				AF02799A1ACFBE7F00D2BBB5 /* LabelView.xib */,
+				AF02799D1ACFC89500D2BBB5 /* LabelView.swift */,
 				AF2ADF241AACBFE600CABC93 /* Images.xcassets */,
 				AF2ADF261AACBFE600CABC93 /* LaunchScreen.xib */,
 				AF2ADF181AACBFE600CABC93 /* Supporting Files */,
@@ -225,8 +233,7 @@
 		AFD399971ABE34DB009EAB8D /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				AF2ADF1C1AACBFE600CABC93 /* Receipts__.xcdatamodeld */,
-				AFA463DB1ABE77CE0032F65F /* Receipts.swift */,
+				AF6F644E1AD5A6C600182FC9 /* Receipts.swift */,
 				AFA463D81ABE77B50032F65F /* Labels.swift */,
 				AFD3998E1ABE2222009EAB8D /* ReceiptsCoreDataManager.swift */,
 			);
@@ -316,6 +323,7 @@
 		AF2ADF0D1AACBFE600CABC93 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = com.theplayapp;
 				TargetAttributes = {
@@ -369,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF2ADF231AACBFE600CABC93 /* Main.storyboard in Resources */,
+				AF02799B1ACFBE7F00D2BBB5 /* LabelView.xib in Resources */,
 				AF2ADF281AACBFE600CABC93 /* LaunchScreen.xib in Resources */,
 				AF2ADF251AACBFE600CABC93 /* Images.xcassets in Resources */,
 			);
@@ -386,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFC90F621ABA994800187F06 /* MainInterface.storyboard in Resources */,
+				AF02799C1ACFBE7F00D2BBB5 /* LabelView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,20 +406,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFA463DC1ABE77CE0032F65F /* Receipts.swift in Sources */,
 				AFC1CA271ABA2C6B004486C0 /* AddLabelViewController.swift in Sources */,
 				AFC1CA281ABA2C6B004486C0 /* FoursquareManager.swift in Sources */,
-				AF2ADF1E1AACBFE600CABC93 /* Receipts__.xcdatamodeld in Sources */,
 				AF2ADF1B1AACBFE600CABC93 /* AppDelegate.swift in Sources */,
 				AFE347701AC135030037BC55 /* TakePhotoCell.swift in Sources */,
 				AFD3998F1ABE2222009EAB8D /* ReceiptsCoreDataManager.swift in Sources */,
 				AF8D82501AC1E70B0074D352 /* PhotoUtilities.swift in Sources */,
+				AF6F644F1AD5A6C600182FC9 /* Receipts.swift in Sources */,
 				AFC1CA241ABA2B7C004486C0 /* CheckMark.swift in Sources */,
 				AFC1CA201ABA2A93004486C0 /* AssetsViewController.swift in Sources */,
 				AFD399951ABE2DE8009EAB8D /* ReceiptsTableViewCell.swift in Sources */,
 				AFC90F6C1ABBB4F600187F06 /* ReceiptsTableViewController.swift in Sources */,
+				AF6F644D1AD5A5A300182FC9 /* Receipts__.xcdatamodeld in Sources */,
 				AFC1CA221ABA2ACA004486C0 /* AssetCell.swift in Sources */,
 				AFA463D91ABE77B50032F65F /* Labels.swift in Sources */,
+				AF02799E1ACFC89500D2BBB5 /* LabelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,11 +436,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF6F64501AD5A6C600182FC9 /* Receipts.swift in Sources */,
 				AF8D82511AC1E70B0074D352 /* PhotoUtilities.swift in Sources */,
-				AFA463DD1ABE77CE0032F65F /* Receipts.swift in Sources */,
-				AFD3998C1ABE1FED009EAB8D /* Receipts__.xcdatamodeld in Sources */,
 				AFA463DA1ABE77B50032F65F /* Labels.swift in Sources */,
 				AFD399901ABE2222009EAB8D /* ReceiptsCoreDataManager.swift in Sources */,
+				AF02799F1ACFC89500D2BBB5 /* LabelView.swift in Sources */,
 				AFD3998D1ABE2124009EAB8D /* FoursquareManager.swift in Sources */,
 				AFC90F601ABA994800187F06 /* ShareViewController.swift in Sources */,
 			);
@@ -688,12 +699,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AF2ADF1C1AACBFE600CABC93 /* Receipts__.xcdatamodeld */ = {
+		AF6F644B1AD5A5A300182FC9 /* Receipts__.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AF2ADF1D1AACBFE600CABC93 /* Receipts__.xcdatamodel */,
+				AF6F644C1AD5A5A300182FC9 /* Receipts__.xcdatamodel */,
 			);
-			currentVersion = AF2ADF1D1AACBFE600CABC93 /* Receipts__.xcdatamodel */;
+			currentVersion = AF6F644C1AD5A5A300182FC9 /* Receipts__.xcdatamodel */;
 			path = Receipts__.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

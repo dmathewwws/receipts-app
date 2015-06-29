@@ -59,15 +59,17 @@ class ReceiptsTableViewController: UIViewController, NSFetchedResultsControllerD
         
         // perform initial model fetch
         var e: NSError?
-        if !self._fetchedResultsController!.performFetch(&e) {
-            println("fetch error: \(e!.localizedDescription)")
+        do {
+            try self._fetchedResultsController!.performFetch()
+        } catch var error as NSError {
+            e = error
+            print("fetch error: \(e!.localizedDescription)")
             abort();
         }
         
         return self._fetchedResultsController!
     }
     var _fetchedResultsController: NSFetchedResultsController?
-    
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         self.tableView.beginUpdates()
@@ -84,14 +86,14 @@ class ReceiptsTableViewController: UIViewController, NSFetchedResultsControllerD
         }
     }
     
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: NSManagedObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         switch type {
         case .Insert:
             tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
         case .Delete:
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
         case .Update:
-            self.configureCell(tableView.cellForRowAtIndexPath(indexPath!) as ReceiptsTableViewCell!, atIndexPath: indexPath!)
+            self.configureCell(tableView.cellForRowAtIndexPath(indexPath!) as! ReceiptsTableViewCell!, atIndexPath: indexPath!)
         case .Move:
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
             tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
@@ -116,7 +118,7 @@ class ReceiptsTableViewController: UIViewController, NSFetchedResultsControllerD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as ReceiptsTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ReceiptsTableViewCell
         self.configureCell(cell, atIndexPath: indexPath)
         return cell
     }
@@ -124,7 +126,7 @@ class ReceiptsTableViewController: UIViewController, NSFetchedResultsControllerD
     func configureCell(cell: ReceiptsTableViewCell, atIndexPath indexPath: NSIndexPath) {
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
         
-        var receiptsDescSet = object.valueForKeyPath("Receipts") as NSSet
+        let receiptsDescSet = object.valueForKeyPath("Receipts") as! NSSet
         for receiptsDesc in receiptsDescSet {
             if let receipt = receiptsDesc as? Receipts {
                 cell.receiptNote!.text = receipt.note
@@ -143,18 +145,17 @@ class ReceiptsTableViewController: UIViewController, NSFetchedResultsControllerD
     func loadDataHome() {
         
         let receiptEntity = NSEntityDescription.entityForName("Receipts", inManagedObjectContext: managedObjectContext!)!
-        let newManagedObject1 = NSEntityDescription.insertNewObjectForEntityForName(receiptEntity.name!, inManagedObjectContext: managedObjectContext!) as Receipts
+        let newManagedObject1 = NSEntityDescription.insertNewObjectForEntityForName(receiptEntity.name!, inManagedObjectContext: managedObjectContext!) as! Receipts
         
         // If appropriate, configure the new managed object.
         // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
         
         newManagedObject1.amount = NSDecimalNumber(double: 10.99)
         newManagedObject1.note = "Headphones"
-        newManagedObject1.modifiedDate = NSDate()
+        newManagedObject1.addedToAppDate = NSDate()
 
-        
         let labelEntity = NSEntityDescription.entityForName("Labels", inManagedObjectContext: managedObjectContext!)!
-        let labelManagedObject1 = NSEntityDescription.insertNewObjectForEntityForName(labelEntity.name!, inManagedObjectContext: managedObjectContext!) as Labels
+        let labelManagedObject1 = NSEntityDescription.insertNewObjectForEntityForName(labelEntity.name!, inManagedObjectContext: managedObjectContext!) as! Labels
         
         
         // If appropriate, configure the new managed object.
@@ -166,31 +167,30 @@ class ReceiptsTableViewController: UIViewController, NSFetchedResultsControllerD
         // Save the context.
 
         ReceiptsCoreDataManager.sharedInstance.saveContext(){ success in
-            println("in saveContext w/ success = \(success)")
+            print("in saveContext w/ success = \(success)")
         }
-        
     }
     
     func loadDataWork() {
         
         let receiptEntity = NSEntityDescription.entityForName("Receipts", inManagedObjectContext: managedObjectContext!)!
-        let newManagedObject1 = NSEntityDescription.insertNewObjectForEntityForName(receiptEntity.name!, inManagedObjectContext: managedObjectContext!) as Receipts
+        let newManagedObject1 = NSEntityDescription.insertNewObjectForEntityForName(receiptEntity.name!, inManagedObjectContext: managedObjectContext!) as! Receipts
         
         // If appropriate, configure the new managed object.
         // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
         
         newManagedObject1.amount = NSDecimalNumber(double: 5.99)
         newManagedObject1.note = "HootSuite Pro"
-        newManagedObject1.modifiedDate = NSDate()
+        newManagedObject1.addedToAppDate = NSDate()
         
         let labelEntity = NSEntityDescription.entityForName("Labels", inManagedObjectContext: managedObjectContext!)!
-        let labelManagedObject1 = NSEntityDescription.insertNewObjectForEntityForName(labelEntity.name!, inManagedObjectContext: managedObjectContext!) as Labels
+        let labelManagedObject1 = NSEntityDescription.insertNewObjectForEntityForName(labelEntity.name!, inManagedObjectContext: managedObjectContext!) as! Labels
 
         // If appropriate, configure the new managed object.
         // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
         labelManagedObject1.label = "Work"
         
-        let labelManagedObject2 = NSEntityDescription.insertNewObjectForEntityForName(labelEntity.name!, inManagedObjectContext: managedObjectContext!) as Labels
+        let labelManagedObject2 = NSEntityDescription.insertNewObjectForEntityForName(labelEntity.name!, inManagedObjectContext: managedObjectContext!) as! Labels
         
         // If appropriate, configure the new managed object.
         // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
@@ -199,7 +199,7 @@ class ReceiptsTableViewController: UIViewController, NSFetchedResultsControllerD
         newManagedObject1.labels = NSSet(objects: labelManagedObject1,labelManagedObject2)
         
         ReceiptsCoreDataManager.sharedInstance.saveContext(){ success in
-            println("in saveContext w/ success = \(success)")
+            print("in saveContext w/ success = \(success)")
         }
     }
     

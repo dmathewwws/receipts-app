@@ -43,7 +43,7 @@ class AssetsViewController: UICollectionViewController, UICollectionViewDelegate
             }
         }
         
-        PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
+        //PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
         
         nextBarButtonItem = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Plain, target: self, action: "nextButtonPressed:");
     }
@@ -58,12 +58,11 @@ class AssetsViewController: UICollectionViewController, UICollectionViewDelegate
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        PHPhotoLibrary.sharedPhotoLibrary().unregisterChangeObserver(self)
+        //PHPhotoLibrary.sharedPhotoLibrary().unregisterChangeObserver(self)
     }
-
     
     // MARK: UICollectionViewDelegateFlowLayout
-    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         var thumbsPerRow: Int
         switch collectionView.bounds.size.width {
         case 0..<400:
@@ -86,7 +85,7 @@ class AssetsViewController: UICollectionViewController, UICollectionViewDelegate
     func showNoAccessAlertAndCancel() {
         let alert = UIAlertController(title: "No Photo Permission", message: "Please grant photo access in Settings -> Privacy", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { action in
-            println("pressed cancel")
+            print("pressed cancel")
         }))
         alert.addAction(UIAlertAction(title: "Settings", style: .Default, handler: { action in
             UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
@@ -99,7 +98,7 @@ class AssetsViewController: UICollectionViewController, UICollectionViewDelegate
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "gotoLabelVC") {
             // pass data to next view
-            let vc = segue.destinationViewController as AddLabelViewController
+            let vc = segue.destinationViewController as! AddLabelViewController
             vc.selectedAssets = selectedAssets
         }
     }
@@ -140,7 +139,7 @@ class AssetsViewController: UICollectionViewController, UICollectionViewDelegate
             return cell
 
         default:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(AssetCollectionViewCellResuseIdentifier, forIndexPath: indexPath) as AssetCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(AssetCollectionViewCellResuseIdentifier, forIndexPath: indexPath) as! AssetCell
             
             // Populate Cell
             // 1
@@ -174,13 +173,13 @@ class AssetsViewController: UICollectionViewController, UICollectionViewDelegate
             
             self.presentViewController(picker, animated: true, completion: nil)
         }else{
-            println("cannot load UIImagePicker Camera")
+            print("cannot load UIImagePicker Camera")
         }
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
         
-        let newImage = info[UIImagePickerControllerOriginalImage] as UIImage
+        let newImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         self.dismissViewControllerAnimated(true, completion: nil)
         
         PHPhotoLibrary.sharedPhotoLibrary().performChanges({
@@ -191,13 +190,13 @@ class AssetsViewController: UICollectionViewController, UICollectionViewDelegate
             let collectionFetchResults = PHAssetCollection.fetchTopLevelUserCollectionsWithOptions(nil)
 
             if let first_obj: AnyObject = collectionFetchResults.firstObject {
-                let wholeAlbumCollection = collectionFetchResults.firstObject as PHAssetCollection
+                let wholeAlbumCollection = collectionFetchResults.firstObject as! PHAssetCollection
                 let albumChangeRequest = PHAssetCollectionChangeRequest(forAssetCollection: wholeAlbumCollection)
             
                 albumChangeRequest.addAssets([assetPlaceholder])
                 }
             }, completionHandler: { success, error in
-                println("added image to album")
+                print("added image to album")
                 self.fetchCollections()
                 dispatch_async(dispatch_get_main_queue()) {
                     self.collectionView!.reloadData()
@@ -241,14 +240,14 @@ class AssetsViewController: UICollectionViewController, UICollectionViewDelegate
         }
     }
     
-    func photoLibraryDidChange(changeInstance: PHChange!) {
+    func photoLibraryDidChange(changeInstance: PHChange) {
         // Respond to changes
         dispatch_async(dispatch_get_main_queue()) {
             // 1
             var changeDetails: PHFetchResultChangeDetails? =
             changeInstance.changeDetailsForFetchResult(self.assetsFetchResults)
             if let changes = changeDetails {
-                self.assetsFetchResults = changes.fetchResultAfterChanges!
+                self.assetsFetchResults = changes.fetchResultAfterChanges
                 self.collectionView?.reloadData()
             }
         }
@@ -257,7 +256,7 @@ class AssetsViewController: UICollectionViewController, UICollectionViewDelegate
     func nextButtonPressed(sender: UIBarButtonItem) {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let addLabelVC = storyboard.instantiateViewControllerWithIdentifier("addLabelVC") as AddLabelViewController
+        let addLabelVC = storyboard.instantiateViewControllerWithIdentifier("addLabelVC") as! AddLabelViewController
         addLabelVC.selectedAssets = selectedAssets
         //println("selectedAssets is \(selectedAssets)")
         //navigationController?.pushViewController(addLabelVC, animated: true)
@@ -270,7 +269,7 @@ class AssetsViewController: UICollectionViewController, UICollectionViewDelegate
     // MARK: Private
     func currentAssetAtIndex(index:NSInteger) -> PHAsset? {
         if let fetchResult = assetsFetchResults{
-            return fetchResult[index-1] as PHAsset?
+            return fetchResult[index-1] as! PHAsset?
         }else{
             return nil
         }

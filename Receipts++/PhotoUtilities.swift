@@ -34,7 +34,7 @@ class PhotoUtilities: NSObject {
         let collection : PHFetchResult = PHAssetCollection.fetchAssetCollectionsWithType(.Album, subtype: .Any, options: fetchOptions)
         
         if let first_obj: AnyObject = collection.firstObject {
-            completionClosure(assetCollection: collection.firstObject as PHAssetCollection?)
+            completionClosure(assetCollection: collection.firstObject as! PHAssetCollection?)
         } else {
             PHPhotoLibrary.sharedPhotoLibrary().performChanges({
                 var createAlbumRequest : PHAssetCollectionChangeRequest = PHAssetCollectionChangeRequest.creationRequestForAssetCollectionWithTitle(self.myAlbumName)
@@ -42,8 +42,8 @@ class PhotoUtilities: NSObject {
                 }, completionHandler: { success, error in
                     if (success) {
                         var collectionFetchResult = PHAssetCollection.fetchAssetCollectionsWithLocalIdentifiers([self.assetCollectionPlaceholder.localIdentifier], options: nil)
-                        print(collectionFetchResult)
-                        completionClosure(assetCollection: collectionFetchResult?.firstObject as PHAssetCollection?)
+                        print(collectionFetchResult, appendNewline: false)
+                        completionClosure(assetCollection: collectionFetchResult.firstObject as! PHAssetCollection?)
                     }
             })
         }
